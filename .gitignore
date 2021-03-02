@@ -129,9 +129,9 @@ dmypy.json
 .pyre/
 
 # Raw Data
-.csv
+*.csv
 
 # Raw outputs
-.txt
-.tar
+*.txt
+*.tar
 
