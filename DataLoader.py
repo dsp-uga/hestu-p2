@@ -2,6 +2,17 @@ import numpy as np
 from skimage import io, transform
 import pandas as pd
 
+
+"""
+info about: torch.utils.data.DataLoader
+https://pytorch.org/docs/stable/data.html
+"""
+def get_train_dataloader(p, dataset):
+    return torch.utils.data.DataLoader(dataset, num_workers=p['num_workers'], 
+            batch_size=p['batch_size'], pin_memory=True, collate_fn=collate_custom,
+            drop_last=True, shuffle=True)
+
+
 class P2DataLoader():
 
     def __init__(self, csv_file, root='', train=True, transform=None,):
